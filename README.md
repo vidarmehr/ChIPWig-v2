@@ -114,7 +114,7 @@ Compress a file in a random access mode (blockwise) using nonuniform quantizatio
 wig2chipwig [InputFile] [OutputFile] -nr2 [B, encode block size from 12 to 18]
 	                                 for random access and encode by blocks of size 2^B 					 
 
-Compress a file in a random access mode (blockwise) using nonuniform quantization, M=100, \tau=$70 of the alargest average read density:
+Compress a file in a random access mode (blockwise) using nonuniform quantization, M=100, \tau=70% of the alargest average read density:
 
 wig2chipwig [InputFile] [OutputFile] -nr3 [B, encode block size from 12 to 18]
 	                                 for random access and encode by blocks of size 2^B 	
