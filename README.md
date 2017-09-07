@@ -15,7 +15,7 @@ To compress a file, please use:
  
 options: 
 
--r [B, encode block size from 11 to 18]
+-r [B, encode block size from 12 to 18]
 	for random access and encode by blocks of size 2^B 
 
 ===========
@@ -72,7 +72,7 @@ $ chipwig2wig in.chipwig out.wig -s chr1 10001 11051
 
 1. Compress a file using nonuniform quantization:
 
-By default, in the nonuniform quantization, \lambda(x) has been obtained for our running example. The number of quantization levels M=50, threshold \tau=50 and all values greater than \tau are mapped to 1000. You can change the parameters in the NonUniQuantizer.cpp file. In order to use the nonuniform quantization for different files and paraamters, you need to find \lambda(x) as explained in the paper.  For the threshold \tau equals to the 70% of the largest average read density, all values greater than \tau need to be mapped to a fixed value gretaer than threshold, for instance to 80% of the maximum average read density.
+By default, in the nonuniform quantization, \lambda(x) has been obtained for our running example. The number of quantization levels M=50 for the threshold \tau=50. For $\tau$=70% of the largest average read density, we considered $M=50$ and $M=100$ and all values greater than \tau are mapped to 80% of the maximum average read density.
 
 The file "inputfileMaximum" returns the total number of average read densities in the file, in addition to the maximum and minimum average read denisities.
 
@@ -88,17 +88,29 @@ The file "inputfileProb", provides the cumulative probability distribution of th
   
 This file then can be used in Matlab, estimating the cumulative probability distributions F_X(x), taking derivates and finding density function f_X(x).  Then, \lambda(x) is obtained as explained in the paper. The number of quantization levels in each interval (a,b) is then derived using the equation (4) in the paper. 
 
-wig2chipwig [InputFile] [OutputFile] -n
+Compress a file using nonuniform quantization with $\tau=50$ and $M=50$:
+wig2chipwig [InputFile] [OutputFile] -n1
 
+Compress a file using nonuniform quantization with $\tau$=70% of the largest average read density and $M=50$:\\
+wig2chipwig [InputFile] [OutputFile] -n2
+
+Compress a file using nonuniform quantization with $\tau$=70 of the largest average read density and $M=100$:\\
+wig2chipwig [InputFile] [OutputFile] -n3
 
 2. Compress a file in a random access mode (blockwise) using nonuniform quantization:
-we have also enabled random access in the lossy mode. By default, in the nonuniform quantization, \lambda(x) has been obtained for our running example. The number of quantization levels M=50, threshold \tau=50 and all values greater than \tau are mapped to 1000.
+We have also enabled random access in the lossy mode. By default, in the nonuniform quantization, \lambda(x) has been obtained for our running example. 
 
-wig2chipwig [InputFile] [OutputFile] -nr [B, encode block size from 11 to 18]
+Compress a file in a random access mode (blockwise) using nonuniform quantization, $M=50$, $\tau=50$:
+wig2chipwig [InputFile] [OutputFile] -nr1 [B, encode block size from 12 to 18]
 	                                 for random access and encode by blocks of size 2^B 
 					 
+Compress a file in a random access mode (blockwise) using nonuniform quantization, $M=50$, $\tau=$70% of the alargest average read density:
+wig2chipwig [InputFile] [OutputFile] -nr2 [B, encode block size from 12 to 18]
+	                                 for random access and encode by blocks of size 2^B 					 
 
-
+Compress a file in a random access mode (blockwise) using nonuniform quantization, $M=100$, $\tau=$70% of the alargest average read density:
+wig2chipwig [InputFile] [OutputFile] -nr3 [B, encode block size from 12 to 18]
+	                                 for random access and encode by blocks of size 2^B 	
 =============
 
 3. Compress a file with uniform quantization:
@@ -135,17 +147,17 @@ Similar to the random access in the lossless mode, this command returns 3 files:
                  
                                          example(lossy)
 
-1. Compress a file using non-uniform quantization in standard mode. By default, the threshold is 50 and the number of quantization levels M is 50.
+1. Compress a file using non-uniform quantization in standard mode. The threshold is 50 and the number of quantization levels M is 50.
 
-$ wig2chipwig in.wig out.chipwig -n
+$ wig2chipwig in.wig out.chipwig -n1
 
 2. Compress a file using uniform quantization in standard mode, with threshold 50 and 50 quantization levels. 
 
 $ wig2chipwig in.wig out.chipwig -u 50 50
 
-3. Compress a file allowing random query in the future with nonuniform quantization and the block size 16. By default, the threshold is 50 and the number of quantization levels is 50:
+3. Compress a file allowing random query in the future with nonuniform quantization and the block size 16. The threshold is 50 and the number of quantization levels is 50:
 
-$ wig2chipwig in.wig out.chipwig -nr 16
+$ wig2chipwig in.wig out.chipwig -nr1 16
 
 4. Compress a file allowing random query in the future with uniform quantization: threshold=50, number of quantization levels=50 and the block size 16:
 
