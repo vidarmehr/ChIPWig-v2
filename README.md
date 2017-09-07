@@ -89,26 +89,33 @@ The file "inputfileProb", provides the cumulative probability distribution of th
 This file then can be used in Matlab, estimating the cumulative probability distributions F_X(x), taking derivates and finding density function f_X(x).  Then, \lambda(x) is obtained as explained in the paper. The number of quantization levels in each interval (a,b) is then derived using the equation (4) in the paper. 
 
 Compress a file using nonuniform quantization with \tau=50 and M=50:
+
 wig2chipwig [InputFile] [OutputFile] -n1
 
 Compress a file using nonuniform quantization with \tau=70% of the largest average read density and M=50:
+
 wig2chipwig [InputFile] [OutputFile] -n2
 
 Compress a file using nonuniform quantization with \tau=70 of the largest average read density and M=100:
+
 wig2chipwig [InputFile] [OutputFile] -n3
 
 2. Compress a file in a random access mode (blockwise) using nonuniform quantization:
+
 We have also enabled random access in the lossy mode. By default, in the nonuniform quantization, \lambda(x) has been obtained for our running example. 
 
 Compress a file in a random access mode (blockwise) using nonuniform quantization, M=50, \tau=50:
+
 wig2chipwig [InputFile] [OutputFile] -nr1 [B, encode block size from 12 to 18]
 	                                 for random access and encode by blocks of size 2^B 
 					 
 Compress a file in a random access mode (blockwise) using nonuniform quantization, M=50, \tau=70% of the alargest average read density:
+
 wig2chipwig [InputFile] [OutputFile] -nr2 [B, encode block size from 12 to 18]
 	                                 for random access and encode by blocks of size 2^B 					 
 
 Compress a file in a random access mode (blockwise) using nonuniform quantization, M=100, \tau=$70 of the alargest average read density:
+
 wig2chipwig [InputFile] [OutputFile] -nr3 [B, encode block size from 12 to 18]
 	                                 for random access and encode by blocks of size 2^B 	
 =============
