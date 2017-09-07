@@ -72,7 +72,7 @@ $ chipwig2wig in.chipwig out.wig -s chr1 10001 11051
 
 1. Compress a file using nonuniform quantization:
 
-By default, in the nonuniform quantization, \lambda(x) has been obtained for our running example. The number of quantization levels M=50 for the threshold \tau=50. For $\tau$=70% of the largest average read density, we considered $M=50$ and $M=100$ and all values greater than \tau are mapped to 80% of the maximum average read density.
+By default, in the nonuniform quantization, \lambda(x) has been obtained for our running example. The number of quantization levels M=50 for the threshold \tau=50. For \tau=70% of the largest average read density, we considered M=50 and M=100 and all values greater than \tau are mapped to 80% of the maximum average read density.
 
 The file "inputfileMaximum" returns the total number of average read densities in the file, in addition to the maximum and minimum average read denisities.
 
@@ -88,27 +88,27 @@ The file "inputfileProb", provides the cumulative probability distribution of th
   
 This file then can be used in Matlab, estimating the cumulative probability distributions F_X(x), taking derivates and finding density function f_X(x).  Then, \lambda(x) is obtained as explained in the paper. The number of quantization levels in each interval (a,b) is then derived using the equation (4) in the paper. 
 
-Compress a file using nonuniform quantization with $\tau=50$ and $M=50$:
+Compress a file using nonuniform quantization with \tau=50 and M=50:
 wig2chipwig [InputFile] [OutputFile] -n1
 
-Compress a file using nonuniform quantization with $\tau$=70% of the largest average read density and $M=50$:\\
+Compress a file using nonuniform quantization with \tau=70% of the largest average read density and M=50:
 wig2chipwig [InputFile] [OutputFile] -n2
 
-Compress a file using nonuniform quantization with $\tau$=70 of the largest average read density and $M=100$:\\
+Compress a file using nonuniform quantization with \tau=70 of the largest average read density and M=100:
 wig2chipwig [InputFile] [OutputFile] -n3
 
 2. Compress a file in a random access mode (blockwise) using nonuniform quantization:
 We have also enabled random access in the lossy mode. By default, in the nonuniform quantization, \lambda(x) has been obtained for our running example. 
 
-Compress a file in a random access mode (blockwise) using nonuniform quantization, $M=50$, $\tau=50$:
+Compress a file in a random access mode (blockwise) using nonuniform quantization, M=50, \tau=50:
 wig2chipwig [InputFile] [OutputFile] -nr1 [B, encode block size from 12 to 18]
 	                                 for random access and encode by blocks of size 2^B 
 					 
-Compress a file in a random access mode (blockwise) using nonuniform quantization, $M=50$, $\tau=$70% of the alargest average read density:
+Compress a file in a random access mode (blockwise) using nonuniform quantization, M=50, \tau=70% of the alargest average read density:
 wig2chipwig [InputFile] [OutputFile] -nr2 [B, encode block size from 12 to 18]
 	                                 for random access and encode by blocks of size 2^B 					 
 
-Compress a file in a random access mode (blockwise) using nonuniform quantization, $M=100$, $\tau=$70% of the alargest average read density:
+Compress a file in a random access mode (blockwise) using nonuniform quantization, M=100, \tau=$70 of the alargest average read density:
 wig2chipwig [InputFile] [OutputFile] -nr3 [B, encode block size from 12 to 18]
 	                                 for random access and encode by blocks of size 2^B 	
 =============
@@ -120,7 +120,7 @@ wig2chipwig [InputFile] [OutputFile] -u [Threshold (float)] [Number of quantizat
 
 4. Compress a file in a random access mode (blockwise) with uniform quantization:
 
-wig2chipwig [InputFile] [OutputFile] -ur [Threshold (float)] [Number of quantization leveles (integer) ] [B, encode block size from 11 to 18] for random access and encode by blocks of size 2^B 
+wig2chipwig [InputFile] [OutputFile] -ur [Threshold (float)] [Number of quantization leveles (integer) ] [B, encode block size from 12 to 18] for random access and encode by blocks of size 2^B 
 
  ===================
  
