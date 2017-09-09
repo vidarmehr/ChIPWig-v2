@@ -96,7 +96,7 @@ Compress a file using nonuniform quantization with \tau=70% of the largest avera
 
 wig2chipwig [InputFile] [OutputFile] -n2
 
-Compress a file using nonuniform quantization with \tau=70 of the largest average read density and M=100:
+Compress a file using nonuniform quantization with \tau=70% of the largest average read density and M=100:
 
 wig2chipwig [InputFile] [OutputFile] -n3
 
