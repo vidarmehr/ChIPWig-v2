@@ -175,13 +175,13 @@ int main(int argc, char * argv[]){
 	if (isOK){
 		if  (r==0  && u==0 && n1==0 && n2==0 && n3==0 && ur == 0 && nr1 == 0 && nr2 == 0 && nr3 == 0 && argc==3){//regular compression
 		//GetChr(targv);
-                Multiply1000(targv);
+               Multiply1000(targv);
 		DiffCoding2(targv);
         	getseq(targv);
 		CountVal(targv);
 		ValMatlab(targv);
                 RunLength(targv);
-                CountLoc1(targv);
+               CountLoc1(targv);
 		Loc1Matlab(targv);
                 CountLoc2(targv);
 		Loc2Matlab(targv);

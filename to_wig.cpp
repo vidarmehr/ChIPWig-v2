@@ -323,12 +323,12 @@ int to_wig(char *argv[])
 	fclose(fpWritebf);
 	fclose(fpReadExtra);
 
-   char T[24][40];//files to delete
-   char Removelist[1][24][40]={
-   		{"buffer1","buffer2","DiffLocSeq1", "DiffLocSeq2","DiffValSeq","DiffLocSeqMatlab1", "DiffLocSeqMatlab2","DiffValSeqMatlab","DiffLocSeqMatlab1Decode", "DiffLocSeqMatlab2Decode","DiffValSeqMatlabDecode","ExceedLoc","ExceedVal","DiffLoc1","DiffLoc2","ChrmName","SpanName","DiffLocSeqDe_RunLength","DiffVal","DiffValSeqMatlabCode","DiffLocSeqMatlab2Code","DiffLocSeqMatlab1Code","DCoding2", "Extra"},
+   char T[25][40];//files to delete
+   char Removelist[1][25][40]={
+   		{"buffer1","buffer2","DiffLocSeq1", "DiffLocSeq2","DiffValSeq","DiffLocSeqMatlab1", "DiffLocSeqMatlab2","DiffValSeqMatlab","DiffLocSeqMatlab1Decode", "DiffLocSeqMatlab2Decode","DiffValSeqMatlabDecode","ExceedLoc","ExceedVal","DiffLoc1Ext","DiffLoc1","DiffLoc2","ChrmName","SpanName","DiffLocSeqDe_RunLength","DiffVal","DiffValSeqMatlabCode","DiffLocSeqMatlab2Code","DiffLocSeqMatlab1Code","DCoding2", "Extra"},
 	};
 	int j;
-     for (i=0; i<24; i++){
+     for (i=0; i<25; i++){
 		for (j=0; j<40; j++){
 			T[i][j] = Removelist[0][i][j];
 		}
@@ -336,7 +336,7 @@ int to_wig(char *argv[])
 
    strcpy(FileName, argv[1]);
    i=0;
-	while (i<24 && T[i][0]){
+	while (i<25 && T[i][0]){
 		strcpy(Removelist[0][i],FileName);
 		strcat(Removelist[0][i],T[i]);
 		remove(Removelist[0][i]);

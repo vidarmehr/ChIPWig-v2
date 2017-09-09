@@ -100,7 +100,7 @@ int encoder(char * argv[]) {
 			i++;
 		}
 		if (i==data_size){
-			printf("Too large data set! Need to increase data_size!\n");
+			printf("Too large data set! Need to increase data_size in encoder.cpp!\n");
 			exit(1);
 		}
 		data_size = i;
@@ -130,7 +130,9 @@ int encoder(char * argv[]) {
 
 
 		//encode
-		int extra_folds = 20;
+		int extra_folds = 2;
+                //Change from 2 to 20 or larger number when receiving the message to increase the extra_folds.
+               // int extra_folds = 20;
         // int extra_folds = 100; when blockwise encoding
 
 		g_buffer = (unsigned char*)malloc(expected_size * extra_folds);

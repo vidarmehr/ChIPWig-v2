@@ -32,12 +32,14 @@ int Diff;
 while(!feof(fpRead)){
 	fscanf(fpRead,"%ld ", &DiffLocation);
         // printf("%ld ", DiffLocation);
-          // if (mydiff(DiffLocation) < SetMaxDiff-1)
+           if (mydiff(DiffLocation) <= SetMaxDiff-3)
 	     ++Map[mydiff(DiffLocation)];
-         //  else{
-         //     ++Map[SetMaxDiff-1];
-          //    fprintf(fpExt, "%ld ", DiffLocation);
-          // }
+           else{
+              printf("Largeeee");
+printf("%d %ld ",mydiff(DiffLocation) , DiffLocation);
+             // ++Map[SetMaxDiff-1];
+              //fprintf(fpExt, "%ld ", DiffLocation);
+           }
 
 }
 
@@ -57,6 +59,7 @@ while(!feof(fpReadExt)){
  fscanf(fpReadExt, "%ld ", &DiffLocation);
  ++NumberOfExt;
 }
+printf("%d", NumberOfExt);
 
 unsigned int j,i=0;
 long int *ExtVal;
@@ -64,7 +67,9 @@ ExtVal= (long int *)malloc(sizeof(long int)*NumberOfExt);
 fseek(fpReadExt, 0L, SEEK_SET);
 while(!feof(fpReadExt)){
 fscanf(fpReadExt, "%ld ", &DiffLocation);
+//printf("%ld ",DiffLocation );
 ExtVal[i++] = DiffLocation;
+printf(" %ld ",ExtVal[i-1] );
 }
 
 fclose(fpReadExt);
@@ -77,8 +82,9 @@ for(i=0;i<NumberOfExt-1;++i){
        }
   }
 }
-*/
-
+for(i=0;i<NumberOfExt;++i){
+printf("\n%ld", ExtVal[i]);
+}*/
 
 strcpy(FileName, argv[1]);
 strcat(FileName,"DiffLoc1");
@@ -106,8 +112,8 @@ while(i<NumberOfExt){
    }
    fprintf(fpWriteDiff, "%ld %ld \n", ExtVal[i], Count);
        
-}
-   */   
+}*/
+    
 
 
 fclose(fpWriteDiff);

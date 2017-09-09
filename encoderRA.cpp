@@ -147,7 +147,7 @@ int encoderRA(char * argv[]) {
 		rm_encode->encodeRange(cm[alphabet_size], cm[alphabet_size+1]); //end of data marker
 		rm_encode->flush();
 		if (current_byte>expected_size * extra_folds){
-			printf("Code longer than expected! Increase extra_folds!\n");
+			printf("Code longer than expected! Increase extra_folds in encoderRA.cpp!\n");
 			exit(1);
 		}
 		delete rm_encode;

@@ -56,7 +56,7 @@ while(!feof(fpRead)){
 			++NumberOfLocations;
 		else{
 			++NumberOfLocations;
-                        if( NumberOfLocations < SetMaxDiff-3){
+                        if( mydiff(NumberOfLocations) <= SetMaxDiff-3){
 			    fprintf(fpWrite,"%lu \t %ld\n",  NumberOfLocations, PreLocation);
 			    fprintf(fpWriteDiffLocSeq1,"%lu ",NumberOfLocations);
 		            fprintf(fpWriteDiffLocSeq2,"%ld ",PreLocation);
@@ -75,7 +75,7 @@ while(!feof(fpRead)){
 
   }
 ++NumberOfLocations;
-if( NumberOfLocations < SetMaxDiff-3){
+if( mydiff(NumberOfLocations) <= SetMaxDiff-3){
 			    fprintf(fpWrite,"%lu \t %ld\n",  NumberOfLocations, PreLocation);
 			    fprintf(fpWriteDiffLocSeq1,"%lu ",NumberOfLocations);
 		            fprintf(fpWriteDiffLocSeq2,"%ld ",PreLocation);
