@@ -88,6 +88,10 @@ int encoderRA(char * argv[]) {
 		alphabet_size = 0;
 		data_size=1000000000;
 		data = ( int*)malloc(data_size * sizeof(int));
+	       if(data == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	       }
 		i=0;
 		while (!feof(fpDiffSeqMatlab) && i<data_size){
 			fscanf(fpDiffSeqMatlab,"%d ", &data[i]);
@@ -125,6 +129,10 @@ int encoderRA(char * argv[]) {
 		}
 		absize_txt(&alphabet_size,fpDiff);
 		cm = ( int*)malloc((alphabet_size+2)*sizeof( int));
+	       if(cm == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	       }
 		makeRanges_txt(cm, alphabet_size, RANGE_SIZE_IN_BITS,fpDiff);
 		fclose(fpDiff);
 
