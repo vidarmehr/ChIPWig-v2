@@ -142,6 +142,10 @@ int encoderRA(char * argv[]) {
          int extra_folds = 100;
 
 		g_buffer = (unsigned char*)malloc(expected_size * extra_folds);
+	        if(g_buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		      exit(1);
+	          }
 		//memset(g_buffer,0x00,expected_size * extra_folds);
 		current_byte = 0;
 		TMPWRITE = 0x00;
