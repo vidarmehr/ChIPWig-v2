@@ -305,6 +305,10 @@ int getblockQ(char *argv[])
 		  fp_2=fopen(FileName , "r");
 		  sz=fsize(fp_2);
 		  buffer = (char*)malloc(sz*sizeof(char));
+	          if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 		  fread(buffer,sizeof(char),sz,fp_2);
 		  fwrite(buffer,sizeof(char),sz,fpWriteCodedBlocks);
 		  fclose(fp_2);
@@ -344,6 +348,10 @@ int getblockQ(char *argv[])
 	sz=fsize(fpLoc);
 	fprintf(fpswig, "%ld ", sz);
 	buffer = (char*)malloc(sz*sizeof(char));
+	if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	fread(buffer,sizeof(char),sz,fpLoc);
 	fwrite(buffer,sizeof(char),sz,fpswig);
         fclose(fpLoc);
@@ -356,6 +364,10 @@ int getblockQ(char *argv[])
 	sz=fsize(fpLocChr);
 	fprintf(fpswig, "%ld ", sz);
 	buffer = (char*)malloc(sz*sizeof(char));
+	if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	fread(buffer,sizeof(char),sz,fpLocChr);
 	fwrite(buffer,sizeof(char),sz,fpswig);
         fclose(fpLocChr);
@@ -367,6 +379,10 @@ int getblockQ(char *argv[])
 	sz=fsize(fpAllName);
 	fprintf(fpswig, "%ld ", sz);
 	buffer = (char*)malloc(sz*sizeof(char));
+	if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	fread(buffer,sizeof(char),sz,fpAllName);
 	fwrite(buffer,sizeof(char),sz,fpswig);
         fclose(fpAllName);
@@ -378,6 +394,10 @@ int getblockQ(char *argv[])
 	sz=fsize(fpBN);
 	fprintf(fpswig, "%ld ", sz);
 	buffer = (char*)malloc(sz*sizeof(char));
+	if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	fread(buffer,sizeof(char),sz,fpBN);
 	fwrite(buffer,sizeof(char),sz,fpswig);
         fclose(fpBN);
@@ -389,6 +409,10 @@ int getblockQ(char *argv[])
 	sz=fsize(fpSCB);
 	fprintf(fpswig, "%ld ", sz);
 	buffer = (char*)malloc(sz*sizeof(char));
+	if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	fread(buffer,sizeof(char),sz,fpSCB);
 	fwrite(buffer,sizeof(char),sz,fpswig);
         fclose(fpSCB);
@@ -425,6 +449,10 @@ int getblockQ(char *argv[])
 	sz=fsize(fpCB);
 	fprintf(fpswig, "%ld ", sz);
 	buffer = (char*)malloc(sz*sizeof(char));
+	if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	fread(buffer,sizeof(char),sz,fpCB);
 	fwrite(buffer,sizeof(char),sz,fpswig);
         fclose(fpCB);
