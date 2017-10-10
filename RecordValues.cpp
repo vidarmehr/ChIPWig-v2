@@ -99,6 +99,11 @@ fclose(fpWriteMax);
 
  long unsigned int *matrix;
  matrix= (long unsigned int *)malloc(sizeof(long unsigned int)*NumberofLargeValues);
+ if (matrix == NULL){
+	 printf("Error! Allocation was not successful. \n" );
+	exit(1);
+ }
+
  long unsigned int Valu;
  strcpy(FileName, argv[1]);
 strcat(FileName, "Large");
