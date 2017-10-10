@@ -88,6 +88,10 @@ int decoder(char * argv[]) {
 		buffer_size = ftell(fpCode);
 		rewind(fpCode);
 		g_buffer = (unsigned char*)malloc(buffer_size);
+		if (g_biffer == NULL){
+			printf("Error! Allocation was not successful. \n");
+			exit(1);
+		}
 		fread(g_buffer,1,buffer_size,fpCode);
 		/*for (j=0; j<10; j++)
 			printf("%hhX ",g_buffer[j]);
@@ -107,6 +111,10 @@ int decoder(char * argv[]) {
 
 		absize_txt(&alphabet_size, fpDiff);
 		cm = (int*)malloc((alphabet_size+2)*sizeof(int));
+		if (cm == NULL){
+			printf("Error! Allocation was not successful. \n");
+			exit(1);
+		}
 		makeRanges_txt(cm, alphabet_size, RANGE_SIZE_IN_BITS,fpDiff);
 		fclose(fpDiff);
 
