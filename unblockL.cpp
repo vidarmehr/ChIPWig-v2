@@ -26,6 +26,10 @@ int unblockL(char *argv[])
 		//file size
 	fscanf(fpRead,"%ld ",&sz);
 	buffer = (char*)malloc(sz*sizeof(char));
+	if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	fread(buffer,sizeof(char),sz,fpRead);
 	fwrite(buffer,sizeof(char),sz,fpWriteLocStart);
         fclose(fpWriteLocStart);
@@ -41,6 +45,10 @@ int unblockL(char *argv[])
 		}
 	fscanf(fpRead,"%ld ",&sz);
 	buffer = (char*)malloc(sz*sizeof(char));
+	if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	fread(buffer,sizeof(char),sz,fpRead);
 	fwrite(buffer,sizeof(char),sz,fpWriteFirstLocChr);
         fclose(fpWriteFirstLocChr);
@@ -55,6 +63,10 @@ int unblockL(char *argv[])
 		}
 	fscanf(fpRead,"%ld ",&sz);
 	buffer = (char*)malloc(sz*sizeof(char));
+	if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	fread(buffer,sizeof(char),sz,fpRead);
 	fwrite(buffer,sizeof(char),sz,fpWriteAllName);
         fclose(fpWriteAllName);
@@ -70,6 +82,10 @@ int unblockL(char *argv[])
 		}
 	fscanf(fpRead,"%ld ",&sz);
 	buffer = (char*)malloc(sz*sizeof(char));
+	if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	fread(buffer,sizeof(char),sz,fpRead);
 	fwrite(buffer,sizeof(char),sz,fpWriteBlockNumber);
         fclose(fpWriteBlockNumber);
@@ -84,6 +100,10 @@ int unblockL(char *argv[])
 	  		}
 	 fscanf(fpRead,"%ld ",&sz);
 	 buffer = (char*)malloc(sz*sizeof(char));
+	if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	 fread(buffer,sizeof(char),sz,fpRead);
 	 fwrite(buffer,sizeof(char),sz,fpWriteSizeCodedBlock);
 	 fclose(fpWriteSizeCodedBlock);
@@ -128,6 +148,10 @@ int unblockL(char *argv[])
 	  		}
 	  fscanf(fpRead,"%ld ",&sz);
 	  buffer = (char*)malloc(sz*sizeof(char));
+	 if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	  fread(buffer,sizeof(char),sz,fpRead);
 	  fwrite(buffer,sizeof(char),sz,fpWriteCodedBlocks);
 	  fclose(fpWriteCodedBlocks);
@@ -166,6 +190,10 @@ int unblockL(char *argv[])
 	while(!feof(fpReadSizeBlock)){
 		fscanf(fpReadSizeBlock, "%ld ", &sz);
 		buffer = (char*)malloc(sz*sizeof(char));
+		if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	    fread(buffer,sizeof(char),sz,fpReadCodedBlocks);
 		FILE *fpWriteBlock;
 	     strcpy(FileName,argv[1]);
@@ -196,6 +224,10 @@ int unblockL(char *argv[])
 		fpReadBlock=fopen(FileName,"r");
 		sz=fsize(fpReadBlock);
 		buffer = (char*)malloc(sz*sizeof(char));
+		if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	          }
 	        fread(buffer,sizeof(char),sz,fpReadBlock);
 	        fwrite(buffer,sizeof(char),sz,fpWriteWig);
                 fclose(fpReadBlock);
