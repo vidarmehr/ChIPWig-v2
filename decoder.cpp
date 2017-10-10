@@ -88,7 +88,7 @@ int decoder(char * argv[]) {
 		buffer_size = ftell(fpCode);
 		rewind(fpCode);
 		g_buffer = (unsigned char*)malloc(buffer_size);
-		if (g_biffer == NULL){
+		if (g_buffer == NULL){
 			printf("Error! Allocation was not successful. \n");
 			exit(1);
 		}
