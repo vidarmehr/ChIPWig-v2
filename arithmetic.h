@@ -43,6 +43,10 @@ double calculate_entropy(T* data, int data_size) {
 
 	buffer_size = max - min + 1;
 	buffer = (int*)malloc(buffer_size * sizeof(int));
+	if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		      exit(1);
+	          }
 	memset(buffer, 0x00, buffer_size * sizeof(int));
 	for (counter=0; counter<data_size; ++counter) {
 		++buffer[data[counter]-min];
@@ -376,6 +380,10 @@ void makeRanges(int* cm, int alphabet_size, int PRECISION, FILE *fp) {
 	
 	//we make ranges for data
 	int* freq = (int*)malloc(alphabet_size * sizeof(int));
+	if(freq == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		      exit(1);
+	          }
 	memset(freq, 0x00, alphabet_size * sizeof(int));
 	//int tmp;
 	int i=0;
@@ -431,6 +439,10 @@ void makeRanges_txt(int* cm, int alphabet_size, int PRECISION, FILE *fp) {
 	
 	//we make ranges for data
 	int* freq = (int*)malloc(alphabet_size * sizeof(int));
+	if(freq == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		      exit(1);
+	          }
 	memset(freq, 0x00, alphabet_size * sizeof(int));
 	//int tmp;
 	int i=0;
@@ -477,6 +489,10 @@ void makeRanges_txt(int* cm, int alphabet_size, int PRECISION, FILE *fp) {
 void makeRanges0(int* data, int data_size, int* cm, int alphabet_size, int PRECISION) {
 	//we make ranges for data
 	int* freq = (int*)malloc(alphabet_size * sizeof(int));
+	if(freq == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		      exit(1);
+	          }
 	memset(freq, 0x00, alphabet_size * sizeof(int));
 	for (int i=0; i<data_size; ++i) {
 		++freq[data[i]];
