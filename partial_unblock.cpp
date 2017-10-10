@@ -282,6 +282,10 @@ int partial_unblock(char *argv[], char *str, long int Start, long int End)
 			fscanf(fpReadSizeBlock, "%ld ", &sz1);
 			//printf("%ld ", sz1);
 			buffer = (char*)malloc(sz1*sizeof(char));
+	                if(buffer == NULL){
+		           printf("Error! Allocation was not successful.\n");
+		           exit(1);
+	               }
 	        fread(buffer,sizeof(char),sz1,fpReadCodedBlocks);
 	        FILE *fpWriteBlock;
 	        strcpy(FileName,argv[1]);
