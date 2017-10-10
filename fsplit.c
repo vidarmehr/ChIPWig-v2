@@ -78,6 +78,10 @@ int fsplit(int *opt, char * argv[]) {
 	//copy every file
 	for (i=1; i<N; i++){
 		buffer = (char*)malloc(sz[i]*sizeof(char));
+		if(buffer == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       exit(1);
+	       }
 		fread(buffer,sizeof(char),sz[i],fpout);
 		fwrite(buffer,sizeof(char),sz[i],fp[i]);
 		fclose(fp[i]);
