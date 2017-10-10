@@ -72,10 +72,26 @@ int main(int argc, char * argv[]){
 	char **targv; //tmp argv to put to subsequent functions, if format correct, only stores two strings: path, filename
 	char **targv2;
 	targv = (char **)malloc(10 * sizeof(char *));
+	if(targv == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       return(-1);
+	          }
 	targv2 = (char **)malloc(10 * sizeof(char *));
+	if(targv2 == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       return(-1);
+	          }
 	for(i = 0; i < 10; i++){
 		targv[i] = (char *)malloc(10000 * sizeof(char));
+		if(targv[i] == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       return(-1);
+	          }
 		targv2[i] = (char *)malloc(10000 * sizeof(char));
+		if(targv2[i] == NULL){
+		       printf("Error! Allocation was not successful.\n");
+		       return(-1);
+	          }
 	}
 	j=1;
 	for (i = 1; i<10 && i < argc && isOK; i++){ //should argc<10
