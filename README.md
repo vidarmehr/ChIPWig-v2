@@ -1,10 +1,9 @@
 # ChIPWig-v2
 The ChIPWig tool provides compression/decompression for the ChIP-seq Wig files. 
-We ran our simulations on High Performance Computing cluster and specified 16 GB memory to run the code on the cluster.
 
 Copyright by Vida Ravanmehr, 2017.
 
-Please contact milenkov@illinois.edu or vidarm@illinois.edu for any questions and source files.
+Please contact milenkov@illinois.edu or vidarm@illinois.edu for any questions.
 
 
 
