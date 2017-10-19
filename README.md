@@ -187,7 +187,7 @@ $ chipwig2wig in.chipwig out.wig -sl chr1 10001 11051
 
                                                        Notes:
 						       
-1. ChIPWig has been tested on a machine with 16GB Random Access Memory (RAM)
+1. ChIPWig has been tested on a machine with 16GB Random Access Memory (RAM).
 2. ChIPWig in the lossless standard mode preserves 4 digits after the decimal point. If your Wig file contains numerical values with more than three decimal digits, there may be rare rounding errors when compressed in the random query mode. No rounding errors occur during decompression when the precision of the values is less than four digits. In the lossy mode, quantized data are represented in 2 digits after the decimal point and henece, ChIPWig preservs 2 digits after the decimal point.
 
 3. Some Wig files may appear in single column format in which case it is recommended to add a regular (or custom) location column.
