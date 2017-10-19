@@ -29,12 +29,12 @@ options:
 -b 
 decompresses a whole file that has been compressed by encoding block-by-block.
 
- Note: The input file must be a block-wise compressed ChIP-seq file. If the file has been compressed in a standard mode, please use the first command to decompress the file.
+ Note: The input file must be a block-wise compressed ChIP-seq file. If the file has been compressed in a standard mode, please use the first command, which is  wig2chipwig [InputFile] [OutputFile], to decompress the file.
  
 -s [ChrmName (e.g. chr1)] [Query Start (integer)] [Query End (integer)] 
 	subsequence query 
 
-Note: The output of this command is 3 files:
+Note: Ths command provides three output files:
 
 1. Outputfile which contains the information of chromosome ChrName for locations between Query Start and Query End.
 
@@ -186,9 +186,10 @@ $ chipwig2wig in.chipwig out.wig -sl chr1 10001 11051
 
 
                                                        Notes:
+						       
+1. ChIPWig has been tested on a machine with 16GB Random Access Memory (RAM)
+2. ChIPWig in the lossless standard mode preserves 4 digits after the decimal point. If your Wig file contains numerical values with more than three decimal digits, there may be rare rounding errors when compressed in the random query mode. No rounding errors occur during decompression when the precision of the values is less than four digits. In the lossy mode, quantized data are represented in 2 digits after the decimal point and henece, ChIPWig preservs 2 digits after the decimal point.
 
-1. ChIPWig in the lossless standard mode preserves 4 digits after the decimal point. If your Wig file contains numerical values with more than three decimal digits, there may be rare rounding errors when compressed in the random query mode. No rounding errors occur during decompression when the precision of the values is less than four digits. In the lossy mode, quantized data are represented in 2 digits after the decimal point and henece, ChIPWig preservs 2 digits after the decimal point.
+3. Some Wig files may appear in single column format in which case it is recommended to add a regular (or custom) location column.
 
-2. Some Wig files may appear in single column format in which case it is recommended to add a regular (or custom) location column.
-
-3. Note that in order to have random access to a subsequence in the compressed file, the original chIP-seq file has to be compressed in a random access mode (block-wise) not in a standard mode.
+4. Note that in order to have random access to a subsequence in the compressed file, the original chIP-seq file has to be compressed in a random access mode (block-wise) not in a standard mode.
