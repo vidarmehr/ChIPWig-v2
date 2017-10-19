@@ -29,7 +29,7 @@ options:
 -b 
 decompresses a whole file that has been compressed by encoding block-by-block.
 
- Note: The input file must be a block-wise compressed ChIP-seq file. If the file has been compressed in a standard mode, please use the first command, which is  wig2chipwig [InputFile] [OutputFile], to decompress the file.
+ Note: The input file must be a block-wise compressed ChIP-seq file. If the file has been compressed in a standard mode, please use the first command, which is chipwig2wig [InputFile] [OutputFile], to decompress the file.
  
 -s [ChrmName (e.g. chr1)] [Query Start (integer)] [Query End (integer)] 
 	subsequence query 
