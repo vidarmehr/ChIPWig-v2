@@ -34,7 +34,7 @@ decompresses a whole file that has been compressed by encoding block-by-block.
 -s [ChrmName (e.g. chr1)] [Query Start (integer)] [Query End (integer)] 
 	subsequence query 
 
-Note: Ths command provides three output files:
+Note: This command provides three output files:
 
 1. Outputfile which contains the information of chromosome ChrName for locations between Query Start and Query End.
 
